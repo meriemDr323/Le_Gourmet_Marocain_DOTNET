@@ -1,0 +1,38 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: transparent;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+    /* Logo à gauche */
+    .navbar .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        margin-right: 10rem; /* espace entre logo et liens */
+    }
+
+    /* Liens juste après le logo */
+    .navbar .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 4rem;
+        margin: 0;
+        padding: 0;
+    }
+
+        .navbar .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-weight: normal;
+            transition: color 0.3s;
+        }
+
+            .navbar .nav-links li a:hover {
+                color: #ffd700;
+            }

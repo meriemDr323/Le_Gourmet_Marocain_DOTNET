@@ -1,0 +1,19 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# .NET
+backend/RestoPlatform/bin/
+backend/RestoPlatform/obj/
+
+# Node
+frontend/resto-frontend/node_modules/
+
+# Build
+dist/
+build/
+
+# Env
+.env
+appsettings.Development.json

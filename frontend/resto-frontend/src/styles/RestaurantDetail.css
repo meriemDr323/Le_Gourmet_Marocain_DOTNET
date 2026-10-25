@@ -1,0 +1,989 @@
+/* ==================== VARIABLES CSS ==================== */
+:root {
+    --color-primary: #D64545;
+    --color-primary-dark: #B63737;
+    --color-text: #1f2937;
+    --color-gray-dark: #4b5563;
+    --color-gray-medium: #6b7280;
+    --color-gray-border: #e5e7eb;
+    --color-background: #f9fafb;
+    --transition-base: all 0.3s ease;
+}
+
+/* ==================== CONTENEUR PRINCIPAL ==================== */
+.restaurant-detail-container {
+    background-color: #E6DEDE;
+    min-height: 100vh;
+    padding-bottom: 2rem;
+}
+
+/* ==================== LOADING ==================== */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #E6DEDE;
+}
+
+.loading-text {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+/* ==================== EN-TÊTE AVEC IMAGE ==================== */
+.cover-section {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+}
+
+.back-button {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-base);
+}
+
+    .back-button:hover {
+        transform: scale(1.1);
+    }
+
+.action-buttons {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.action-button {
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: var(--transition-base);
+}
+
+    .action-button:hover {
+        transform: scale(1.1);
+    }
+
+.cover-info {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    color: white;
+}
+
+.cuisine-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.restaurant-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.restaurant-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1rem;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.meta-rating {
+    font-weight: bold;
+}
+
+.meta-price {
+    font-weight: bold;
+}
+
+/* ==================== CONTENU PRINCIPAL ==================== */
+.main-content {
+    width: 1260px;
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ==================== ONGLETS ==================== */
+.tabs-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 0.5rem;
+    margin-top: -3rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 1rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: capitalize;
+}
+
+.tab-button-active {
+    color: white;
+}
+
+.tab-button-inactive {
+    color: var(--color-gray-medium);
+}
+
+    .tab-button-inactive:hover {
+        background-color: var(--color-background);
+    }
+
+/* ==================== CONTENU ONGLETS ==================== */
+.tab-content {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.two-column-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+.content-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.description-text {
+    color: var(--color-gray-dark);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.divider {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-gray-border);
+}
+
+.price-badge {
+    display: inline-block;
+    background-color: #fffbf0;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* ==================== SERVICES ==================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.service-text {
+    color: var(--color-gray-dark);
+}
+
+/* ==================== CONTACT ==================== */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: start;
+    gap: 0.75rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+}
+
+.contact-value {
+    color: var(--color-gray-dark);
+}
+
+.contact-link {
+    text-decoration: none;
+}
+
+    .contact-link:hover {
+        text-decoration: underline;
+    }
+
+/* ==================== HORAIRES ==================== */
+.horaires-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.horaire-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.horaire-item-current {
+    background-color: #fffbf0;
+    border-left: 4px solid var(--color-primary);
+}
+
+.horaire-item-normal {
+    background-color: var(--color-background);
+}
+
+.horaire-jour {
+    font-weight: 600;
+    color: var(--color-text);
+    text-transform: capitalize;
+}
+
+.horaire-jour-bold {
+    font-weight: bold;
+}
+
+.horaire-heures {
+    font-weight: 500;
+}
+
+.horaire-heures-open {
+    color: #10b981;
+}
+
+.horaire-heures-closed {
+    color: #ef4444;
+}
+
+/* ==================== SECTION AVIS ==================== */
+.avis-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-gray-border);
+}
+
+.avis-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.avis-summary {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avis-note-display {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.avis-note-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+.avis-count {
+    color: var(--color-gray-medium);
+    font-size: 0.9rem;
+}
+
+.add-avis-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+    color: white;
+}
+
+    .add-avis-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(214, 69, 69, 0.3);
+    }
+
+.chart-container {
+    background-color: var(--color-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.chart-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.note-card {
+    background-color: #fffbf0;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.note-label {
+    font-size: 0.875rem;
+    color: var(--color-gray-medium);
+    margin-bottom: 0.5rem;
+}
+
+.note-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.note-number {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+/* ==================== FORMULAIRE AVIS ==================== */
+.avis-form-container {
+    margin-bottom: 1.5rem;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.avis-form-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.stars-input {
+    display: flex;
+    gap: 4px;
+}
+
+.star-clickable {
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+    .star-clickable:hover {
+        transform: scale(1.1);
+    }
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--color-gray-border);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+    .form-input:focus,
+    .form-textarea:focus {
+        outline: none;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(214, 69, 69, 0.1);
+    }
+
+.form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.cancel-button,
+.submit-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cancel-button {
+    background-color: var(--color-background);
+    color: var(--color-gray-dark);
+    border: 2px solid var(--color-gray-border);
+}
+
+    .cancel-button:hover {
+        background-color: var(--color-gray-border);
+    }
+
+.submit-button {
+    color: white;
+    border: none;
+}
+
+    .submit-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(214, 69, 69, 0.3);
+    }
+
+/* ==================== FILTRES AVIS ==================== */
+.filters-container {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 1.5rem;
+    background-color: white;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-gray-border);
+}
+
+.filter-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.filter-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-button-active {
+    color: white;
+}
+
+.filter-button-inactive {
+    background-color: var(--color-background);
+    color: var(--color-gray-dark);
+}
+
+    .filter-button-inactive:hover {
+        background-color: var(--color-gray-border);
+    }
+
+/* ==================== LISTE AVIS ==================== */
+.avis-item-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-gray-border);
+    transition: all 0.3s;
+}
+
+    .avis-item-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+.avis-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+}
+
+.avis-user-info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.avis-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.avis-user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.avis-user-name {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.avis-date {
+    font-size: 0.8rem;
+    color: var(--color-gray-medium);
+}
+
+.avis-note-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #fffbf0;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.avis-note-badge-number {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+.avis-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.avis-comment {
+    color: var(--color-gray-dark);
+    line-height: 1.6;
+    font-size: 0.875rem;
+}
+
+.avis-photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.avis-photo {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+    .avis-photo:hover {
+        transform: scale(1.05);
+    }
+
+.avis-action-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: none;
+    color: var(--color-gray-medium);
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+    .avis-action-button:hover {
+        background-color: var(--color-background);
+        color: var(--color-primary);
+    }
+
+/* ==================== RÉSERVATION FLOTTANTE ==================== */
+.floating-reservation {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.reservation-button {
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1.125rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s;
+}
+
+    .reservation-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    }
+
+/* ==================== MODAL ==================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 1rem;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: auto;
+    position: relative;
+}
+
+.modal-header {
+    padding: 2rem;
+    border-bottom: 1px solid var(--color-gray-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.modal-close {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: var(--transition-base);
+}
+
+    .modal-close:hover {
+        transform: scale(1.1);
+    }
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-form-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.modal-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.modal-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.modal-form-input,
+.modal-form-select,
+.modal-form-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--color-gray-border);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+    .modal-form-input:focus,
+    .modal-form-select:focus,
+    .modal-form-textarea:focus {
+        outline: none;
+        border-color: var(--color-primary);
+    }
+
+.modal-form-textarea {
+    resize: vertical;
+}
+
+.modal-form-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.modal-button-secondary {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-background);
+    color: var(--color-gray-dark);
+    border: 2px solid var(--color-gray-border);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+    .modal-button-secondary:hover {
+        background-color: var(--color-gray-border);
+    }
+
+.modal-button-primary {
+    padding: 0.75rem 2rem;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition-base);
+}
+
+    .modal-button-primary:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+    }
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .main-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .restaurant-name {
+        font-size: 2rem;
+    }
+
+    .tabs-container {
+        flex-wrap: wrap;
+    }
+
+    .tab-button {
+        min-width: calc(50% - 0.25rem);
+    }
+
+    .two-column-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .reservation-button {
+        font-size: 1rem;
+        padding: 0.875rem 2rem;
+    }
+
+    .avis-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .add-avis-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .notes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .avis-item-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .avis-note-badge {
+        align-self: flex-start;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .cancel-button,
+    .submit-button {
+        width: 100%;
+    }
+
+    .modal-form-buttons {
+        flex-direction: column;
+    }
+
+    .modal-button-secondary,
+    .modal-button-primary {
+        width: 100%;
+    }
+}

@@ -1,0 +1,6 @@
+@RestoPlatform_HostAddress = http://localhost:5048
+
+GET {{RestoPlatform_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
